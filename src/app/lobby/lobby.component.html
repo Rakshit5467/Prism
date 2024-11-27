@@ -1,0 +1,27 @@
+<div class="bg">
+        <header class="d-flex flex-wrap align-items-center justify-content-center py-3 px-5">
+            <div class="col-md-6 d-flex my-2 ps-3">
+                <img src="logo.svg" class="mx-3"/>
+                <h3 class="mb-0">Prism</h3>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="/lobby" class="me-5 mt-3">Lobby</a>
+                <button type="button" class="btn btn-primary me-5 px-4">Create Room</button>
+            </div>
+        </header>
+      
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="form d-flex flex-column pb-3">
+            <div class="title d-flex justify-content-center pt-3">
+                <p>👋 Create OR Join a Room</p>
+            </div>
+            <div class="form-content d-flex flex-column">
+                <label for="name" class="ms-4 mt-4 mb-2">Your Name</label>
+                <input type="text" id="name" class="p-3 mx-4 mb-4" placeholder="Enter your display name" [(ngModel)]="userName">
+                <label for="name" class="ms-4 mb-2">Room Name</label>
+                <input type="text" id="name" class="p-3 mx-4 mb-4" placeholder="Enter the room id" [(ngModel)]="roomId">
+            </div>
+            <button class="btn btn-primary mx-4 mt-3 my-4 p-3" (click)="enterRoom()">Go to room</button>
+        </div>
+    </div>
+</div>

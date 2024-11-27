@@ -1,0 +1,13 @@
+.videoContainer{
+    border: 2px solid #b366f9;
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.videoPlayer{
+    height: 100%;
+    width: 100%;
+}

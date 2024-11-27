@@ -1,0 +1,53 @@
+.bg{
+    background-color: #1a1a1a;
+    height: 100vh;
+}
+
+*{
+    color: white;
+    font-family: 'Poppins', sans-serif
+}
+
+img{
+    height: 2rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    height: 88vh;
+}
+
+.btn-primary{
+    background-color: blueviolet;
+    border: blueviolet solid 2px;
+}
+.btn-primary:hover{
+    background-color: rgb(129, 2, 247);
+}
+
+
+.form{
+    height: 200px;
+    background-color: #262625;
+    border-radius: 10px;
+    width: 45%;
+    height: auto;
+}
+
+.title{
+    background-color: #363739;
+    border-radius: 10px 10px 0 0;
+}
+
+input{
+    background-color: #3f434a;
+    border: 0px;
+    border-radius: 5px;
+}
+
+header{
+    border-bottom: black solid;
+}

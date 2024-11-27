@@ -1,0 +1,46 @@
+<div class="bg p-0 d-flex flex-column">
+        <header class="d-flex flex-wrap align-items-center justify-content-center py-3 px-5">
+            <div class="col-md-6 d-flex my-2 ps-3">
+                <img src="logo.svg" class="mx-3"/>
+                <h3 class="mb-0">Prism</h3>
+            </div>
+            <div class="col-md-6 text-end">
+                <button type="button" class="btn btn-primary me-5 px-4" [routerLink]="['/lobby']">Create Room</button>
+            </div>
+        </header>
+
+    <div class="container-fluid d-flex p-0 m-0">
+        <div class="participant-list">
+            <div class="head d-flex justify-content-around align-items-center py-2 px-3">
+                <h5>Participants</h5>
+                <div class="total px-3 py-2">{{numberOfParticipants()}}</div>
+            </div>
+            <div class="participants px-4 pt-3">
+                <p>You: {{uid}}</p>
+                <p *ngFor="let user of remoteUsers | keyvalue, let i = index">User {{i+2}}: {{user.key}}</p>
+            </div>
+        </div>
+
+        <div class="meeting">
+            <div id="streamBox">
+                <app-user *ngIf="sharingScreen" [userId]="uid+'-screen'"></app-user>
+            </div>
+
+            <div id="streamsContainer" class="d-flex flex-wrap justify-content-center align-items-center px-2 gap-4">
+                <!-- <div class="videoContainer d-flex justify-content-center align-items-center">
+                    <div class="videoPlayer" id='user-{{uid}}'></div>
+                </div> -->
+                <app-user [userId]="uid"></app-user>
+
+                <app-user *ngFor="let user of remoteUsers | keyvalue" [userId]="user.key"></app-user>
+            </div>
+
+            <div class="controls d-flex justify-content-center">
+                <div id="camera" class="btn m-2" (click)="toggleControl($event, 1)"><img src="cameraOn.svg" alt="camera"></div>
+                <div id="mic" class="btn m-2" (click)="toggleControl($event, 0)"><img src="micOn.svg" alt="mic"></div>
+                <div id="share" class="btn m-2 inactive" (click)="toggleScreen($event)"><img src="shareScreen.svg" alt="screen share"></div>
+                <div id="leave" class="btn m-2 inactive" (click)="leave()"><img src="leave.svg" alt="exit"></div>
+            </div>
+        </div>
+    </div>
+</div>
